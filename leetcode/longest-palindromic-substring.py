@@ -1,5 +1,5 @@
 from typing import *
-from leetcode.editor.common import *
+from node import *
 
 
 class LongestPalindromicSubstring:
@@ -17,12 +17,13 @@ class LongestPalindromicSubstring:
                     start = i - (length - 1) // 2
                     end = i + length // 2
             return s[start:end + 1]
-    # leetcode submit region end(Prohibit modification and deletion)
-    def _expand(self, s: str, left: int, right: int) -> int:
-        while left >= 0 and right < len(s) and s[left] == s[right]:
-            left -= 1
-            right += 1
-        return right - left - 1
-
+        # leetcode submit region end(Prohibit modification and deletion)
+        def _expand(self, s: str, left: int, right: int) -> int:
+            while left >= 0 and right < len(s) and s[left] == s[right]:
+                left -= 1
+                right += 1
+            return right - left - 1
+        
 if __name__ == '__main__':
     solution = LongestPalindromicSubstring().Solution()
+    print(solution.longestPalindrome("babad"))  # Output: "bab" or "aba"

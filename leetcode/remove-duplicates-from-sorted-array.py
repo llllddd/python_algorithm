@@ -11,7 +11,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from typing import *
-from common.node import *
+from leetcode.editor.en.node import *
 
 # @lc code=start
 class Solution:
