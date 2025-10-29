@@ -67,6 +67,12 @@ class MyArrayList:
         self.data[index] = element
         return old_val
     
+    def get_size(self):
+        return self.size
+    
+    def is_empty(self):
+        return self.size == 0
+    
      # util functionalities
     def _resize(self, new_cap):
         temp = [None] * new_cap
@@ -93,5 +99,18 @@ class MyArrayList:
         print(self.data)
     
     
+if __name__ == "__main__":
+    arr = MyArrayList(init_capacity=3)
 
+    for i in range(1,6):
+        arr.add_last(i)
+    
+    arr.remove(3)
+    arr.add(1, 9)
+    arr.add_first(100)
+    val = arr.remove_last()
+
+    # 100 1 9 2 3
+    for i in range(arr.get_size()):
+        print(arr.get(i))
         
